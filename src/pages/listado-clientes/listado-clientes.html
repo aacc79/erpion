@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>Clientes</ion-title>
+      <ion-buttons end>
+        <button style="color:green" ion-button icon-only (click)='crearCliente()'>
+            <ion-icon name="add-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor='let cliente of clientes' style="display:flex">
+    <ion-card-content>
+      <button  ion-button icon-only (click)='verCliente(cliente)'>
+        <ion-icon style="font-size: 20px" name="eye"></ion-icon>
+      </button>
+      <button color="secondary" ion-button icon-only (click)='editarCliente(cliente)'>
+        <ion-icon ios="ios-create" md="md-create"></ion-icon>
+      </button>
+      <button color="danger" ion-button icon-only (click)='eliminarCliente(cliente._id)'>
+        <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+      </button>
+    </ion-card-content>
+              <ion-card-header text-wrap>
+                <h3>{{cliente.nombre}}</h3>
+              </ion-card-header>
+  </ion-card>
+</ion-content>

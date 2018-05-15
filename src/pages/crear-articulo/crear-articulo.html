@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Nuevo artículo</ion-title>
+    <ion-buttons end>
+        <button style="color: red" ion-button icon-only (click)='cancelar()'>
+            <ion-icon name="close-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="crearArticulo()">
+      <ion-item text-wrap>
+        <ion-label stacked> Referencia </ion-label>
+        <ion-input type="text" name='referencia' [(ngModel)]='articulo.referencia'></ion-input>
+      </ion-item>
+      <ion-item text-wrap>
+        <ion-label stacked> precio </ion-label>
+        <ion-input type="number" name='precio' [(ngModel)]='articulo.precio'></ion-input>
+      </ion-item>
+      <button ion-button type='submit'>Crear Artículo</button>
+  </form>
+</ion-content>

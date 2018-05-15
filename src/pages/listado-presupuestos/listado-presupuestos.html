@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>Presupuestos</ion-title>
+      <ion-buttons end>
+        <button style="color:green" ion-button icon-only (click)='crearPresupuesto()'>
+            <ion-icon name="add-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor='let presupuesto of presupuestos' style="display:flex">
+    <ion-card-content>
+      <button  ion-button icon-only (click)='verPresupuesto(presupuesto)'>
+        <ion-icon style="font-size: 20px" name="eye"></ion-icon>
+      </button>
+      <button color="secondary" ion-button icon-only (click)='editarPresupuesto(presupuesto)'>
+        <ion-icon ios="ios-create" md="md-create"></ion-icon>
+      </button>
+      <button color="danger" ion-button icon-only (click)='eliminarPresupuesto(presupuesto._id)'>
+        <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+      </button>
+    </ion-card-content>
+              <ion-card-header text-wrap>
+                <h3>{{presupuesto.cliente}}</h3>
+                <h2>{{presupuesto.fecha}}</h2>
+              </ion-card-header>
+  </ion-card>
+</ion-content>
